@@ -3,9 +3,15 @@
 <suite name="Restful Booker Test Suite" >
     <test name="Restful Booker tests">
         <classes>
-            <class name="io.github.mfaisalkhatri.RestfulBookerTests">
+            <class name="io.github.mfaisalkhatri.tests.RestfulBookerTests">
                 <methods>
                     <include name="testCreateBooking"/>
+                    <include name="testGetBooking"/>
+                    <include name="testTokenGeneration"/>
+                    <include name="testUpdateBooking"/>
+                    <include name="testUpdatePartialBooking"/>
+                    <include name="testDeleteBooking"/>
+                    <include name="testDeletedBooking"/>
                 </methods>
             </class>
         </classes>
