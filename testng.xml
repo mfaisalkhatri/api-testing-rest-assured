@@ -6,6 +6,12 @@
             <class name="io.github.mfaisalkhatri.tests.RestfulBookerTests">
                 <methods>
                     <include name="testCreateBooking"/>
+                    <include name="testGetBooking"/>
+                    <include name="testTokenGeneration"/>
+                    <include name="testUpdateBooking"/>
+                    <include name="testUpdatePartialBooking"/>
+                    <include name="testDeleteBooking"/>
+                    <include name="testDeletedBooking"/>
                 </methods>
             </class>
         </classes>

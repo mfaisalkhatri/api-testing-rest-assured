@@ -20,7 +20,9 @@ public class BaseTest {
 
     protected static ResponseSpecification responseSpec() {
         final ResponseSpecBuilder responseBuilder = new ResponseSpecBuilder();
-        return responseBuilder.expectStatusCode(200).build();
+        return responseBuilder.expectStatusCode(200)
+                .expectHeader("Content-Type", "application/json; charset=utf-8")
+                .build();
 
     }
 

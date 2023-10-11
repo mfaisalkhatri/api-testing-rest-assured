@@ -82,7 +82,7 @@ public class RestfulBookerTests extends BaseTest {
                 .when()
                 .delete("/booking/" + this.bookingId)
                 .then()
-                .spec(responseSpec());
+                .statusCode(201);
     }
 
     @Test
