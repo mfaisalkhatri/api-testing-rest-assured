@@ -3,7 +3,7 @@
 <suite name="Restful Booker Test Suite" >
     <test name="Restful Booker tests">
         <classes>
-            <class name="io.github.mfaisalkhatri.RestfulBookerTests">
+            <class name="io.github.mfaisalkhatri.tests.RestfulBookerTests">
                 <methods>
                     <include name="testCreateBooking"/>
                 </methods>
