@@ -10,6 +10,7 @@
 
 - This repo contains example codes of API Tests using Rest-Assured
 - `Hamcrest Matchers` are used for assertions
+- [Datafaker](https://www.datafaker.net/) for test data generation
 - Tests are written using the [Restful Booker APIs](https://restful-booker.herokuapp.com/apidoc/index.html)
 
 ## :hammer_and_wrench: Talking more about the Scenarios Covered in this project:
@@ -24,10 +25,14 @@ framework in this repository:
 - How to write tests for `DELETE` requests?
 - How to handle the `authentication` requests?
 - How to use RequestSpecification in Rest-Assured?
+- How to use ResponseSpecification in Rest-Assured?
 - How to verify the Response Body?
 - How to verify the Response Status Code?
+- How to verify the Response headers using ResponseSpecification?
 - How to perform assertions using `Hamcrest Matchers`?
-- How to use _JAVA RECORDS_ for passing values to request body?
+- How to use _JAVA RECORDS_ for passing values to POST, PUT and PATCH request body?
+- How to use [Datafaker](https://www.datafaker.net/) for generating random fake test data and use it in automated tests?
+- Performing End to End testing of the Restful-booker APIs
 
 ## :computer: Blog and Video Links
 
@@ -37,6 +42,7 @@ framework in this repository:
 ## :movie_camera: Tutorial Video
 
 [![Watch the video](https://img.youtube.com/vi/xLKpdQE0oKY/hqdefault.jpg)](https://www.youtube.com/watch?v=xLKpdQE0oKY&t=1s)
+[![Watch the video](https://img.youtube.com/vi/AFQSolEeu74/hqdefault.jpg)](https://www.youtube.com/live/AFQSolEeu74?si=8WROMbunjUuzqqQj&t=1)
 
 ## :question: Need Assistance?
 
