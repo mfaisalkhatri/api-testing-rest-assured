@@ -1,13 +1,18 @@
 package io.github.mfaisalkhatri.restfulbooker.tests;
 
+import static io.github.mfaisalkhatri.restfulbooker.testdata.TestDataBuilder.getAuthData;
+import static io.github.mfaisalkhatri.restfulbooker.testdata.TestDataBuilder.getBookingData;
+import static io.github.mfaisalkhatri.restfulbooker.testdata.TestDataBuilder.getPartialUpdateBookingData;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
 import io.github.mfaisalkhatri.restfulbooker.testdata.AuthData;
 import io.github.mfaisalkhatri.restfulbooker.testdata.BookingData;
 import io.github.mfaisalkhatri.restfulbooker.testdata.PartialUpdateBookingData;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 
 public class RestfulBookerTests extends BaseTest {
 
