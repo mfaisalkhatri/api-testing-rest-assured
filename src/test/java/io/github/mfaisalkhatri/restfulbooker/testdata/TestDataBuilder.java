@@ -1,4 +1,4 @@
-package io.github.mfaisalkhatri.testdata;
+package io.github.mfaisalkhatri.restfulbooker.testdata;
 
 import net.datafaker.Faker;
 

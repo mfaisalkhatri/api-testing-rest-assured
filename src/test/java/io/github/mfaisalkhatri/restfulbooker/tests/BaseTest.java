@@ -1,4 +1,4 @@
-package io.github.mfaisalkhatri.tests;
+package io.github.mfaisalkhatri.restfulbooker.tests;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
