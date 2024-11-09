@@ -10,7 +10,7 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 public class AddOrderTests {
-    
+
     @Test
     public void testAddOrder () {
         List<Order> orders = new ArrayList<> ();
