@@ -13,9 +13,8 @@ public class AddOrderTests {
 
     @Test
     public void testAddOrder () {
-        List<Order> orders = new ArrayList<> ();
+        final List<Order> orders = new ArrayList<> ();
         orders.add (new Order ("1", "34", "Canon Camera CX12", 14500, 1, 915, 15415));
-
         given ().body (orders)
             .when ()
             .log ()
