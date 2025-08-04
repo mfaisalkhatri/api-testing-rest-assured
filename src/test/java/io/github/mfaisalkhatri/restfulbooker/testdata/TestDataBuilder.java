@@ -1,6 +1,5 @@
 package io.github.mfaisalkhatri.restfulbooker.testdata;
 
-import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 
 import net.datafaker.Faker;
@@ -10,10 +9,9 @@ public class TestDataBuilder {
     private static final Faker FAKER = new Faker ();
 
     public static BookingData getBookingData () {
-        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat ("yyyy-MM-dd");
-        final BookingDates bookingDates = new BookingDates (simpleDateFormat.format (FAKER.date ()
-            .past (20, TimeUnit.DAYS)), simpleDateFormat.format (FAKER.date ()
-            .future (10, TimeUnit.DAYS)));
+        final BookingDates bookingDates = new BookingDates (FAKER.timeAndDate ()
+            .past (20, TimeUnit.DAYS, "yyyy-MM-dd"), FAKER.timeAndDate ()
+            .future (10, TimeUnit.DAYS, "yyyy-MM-dd"));
 
         return new BookingData (FAKER.name ()
             .firstName (), FAKER.name ()
