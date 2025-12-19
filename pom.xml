@@ -97,7 +97,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite-xml}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>-Dfile.encoding=UTF-8 -Xdebug -Xnoagent
+                    <argLine>-Dfile.encoding=UTF-8
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
@@ -107,11 +107,12 @@
                 <artifactId>allure-maven</artifactId>
                 <version>${allure-maven.version}</version>
                 <configuration>
-                    <reportDirectory>${project.build.directory}/target/allure-report</reportDirectory>
+                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
                     <reportVersion>${allure-testng.version}</reportVersion>
                     <allureDownloadUrl>
                         https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure-testng.version}/allure-commandline-${allure-testng.version}.zip
                     </allureDownloadUrl>
+
                 </configuration>
             </plugin>
         </plugins>
