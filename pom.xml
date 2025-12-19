@@ -11,13 +11,16 @@
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rest-assured.version>6.0.0</rest-assured.version>
+        <jackson-databind.version>2.20.1</jackson-databind.version>
         <testng.version>7.11.0</testng.version>
-        <rest-assured.version>5.5.5</rest-assured.version>
         <hamcrest-all.version>1.3</hamcrest-all.version>
-        <jackson-databind.version>2.19.2</jackson-databind.version>
-        <data-faker.version>2.4.4</data-faker.version>
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+        <data-faker.version>2.5.3</data-faker.version>
+        <allure-testng.version>2.32.0</allure-testng.version>
+        <allure-maven.version>2.17.0</allure-maven.version>
+        <aspectj.version>1.9.25.1</aspectj.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <java-release.version>17</java-release.version>
         <suite-xml>testng.xml</suite-xml>
     </properties>
@@ -44,11 +47,15 @@
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest-all.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
         <dependency>
             <groupId>net.datafaker</groupId>
             <artifactId>datafaker</artifactId>
             <version>${data-faker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
         </dependency>
     </dependencies>
 
@@ -84,6 +91,25 @@
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjweaver</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>${allure-maven.version}</version>
+                    <configuration>
+                        <reportDirectory>${project.build.directory}/target/allure-report</reportDirectory>
+                        <reportVersion>${allure-testng.version}</reportVersion>
+                        <allureDownloadUrl>
+                            https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure-testng.version}/allure-commandline-${allure-testng.version}.zip
+                        </allureDownloadUrl>
                     </configuration>
                 </plugin>
             </plugins>
