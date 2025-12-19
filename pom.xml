@@ -112,7 +112,6 @@
                     <allureDownloadUrl>
                         https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure-testng.version}/allure-commandline-${allure-testng.version}.zip
                     </allureDownloadUrl>
-
                 </configuration>
             </plugin>
         </plugins>
