@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Restful Booker Test Suite">
-    <test name="Restful Booker tests">
-        <classes>
-            <class name="io.github.mfaisalkhatri.restfulbooker.tests.RestfulBookerTests">
-                <methods>
-                    <include name="testCreateBooking"/>
-                    <include name="testGetBooking"/>
-                    <include name="testTokenGeneration"/>
-                    <include name="testUpdateBooking"/>
-                    <include name="testUpdatePartialBooking"/>
-                    <include name="testDeleteBooking"/>
-                    <include name="testDeletedBooking"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<suite name="API Automation tests">
+    <suite-files>
+        <suite-file path="testng-restfulbooker.xml"/>
+        <suite-file path="testng-restful-ecommerce.xml"/>
+    </suite-files>
 </suite>

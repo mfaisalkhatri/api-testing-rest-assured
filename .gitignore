@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 test-output/
+allure-results/
 
 ### IntelliJ IDEA ###
 .idea/

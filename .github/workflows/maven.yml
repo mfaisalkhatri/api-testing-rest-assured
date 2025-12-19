@@ -1,0 +1,74 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches:
+      - master
+      - issue-*
+
+  pull_request_target:
+    branches:
+      - master
+      - issue-*
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Start restful booker and ecommerce service
+        run: |
+          docker compose -f ${{ github.workspace }}/docker-files/docker-compose-restfulbooker.yml up -d
+          docker compose -f ${{ github.workspace }}/docker-files/docker-compose-ecommerce.yml up -d
+
+      - name: Build with Maven and run tests
+        run: mvn clean install
+
+      - name: Stop restful booker and ecommerce service
+        run: |
+          docker compose -f ${{ github.workspace }}/docker-files/docker-compose-restfulbooker.yml down --remove-orphans
+          docker compose -f ${{ github.workspace }}/docker-files/docker-compose-ecommerce.yml down --remove-orphans
+
+      - name: Test Report
+        uses: dorny/test-reporter@v2
+        if: always()
+        with:
+          name: Test Results
+          path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml
+          reporter: java-junit
+
+      - name: Get Allure history
+        uses: actions/checkout@v6
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
