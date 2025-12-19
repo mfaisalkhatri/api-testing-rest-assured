@@ -10,6 +10,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -33,12 +34,11 @@ public class AddOrderTests {
     @Step ("Send POST order request and verify the response")
     public void sendOrderRequest (final List<Order> orders) {
         given ().when ()
+            .filter (new AllureRestAssured ())
             .body (orders)
             .contentType (ContentType.JSON)
             .post ("http://localhost:3004/addOrder")
             .then ()
-            .log ()
-            .all ()
             .statusCode (201);
     }
 }

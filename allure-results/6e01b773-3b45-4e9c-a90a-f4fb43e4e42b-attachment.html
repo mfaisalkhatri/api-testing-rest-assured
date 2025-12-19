@@ -1,0 +1,41 @@
+<div>POST to http://localhost:3004/addOrder</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+[
+    {
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;product_id&quot;: &quot;34&quot;,
+        &quot;product_name&quot;: &quot;Canon Camera CX12&quot;,
+        &quot;product_amount&quot;: 14500,
+        &quot;qty&quot;: 1,
+        &quot;tax_amt&quot;: 915,
+        &quot;total_amt&quot;: 15415
+    }
+]    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:3004/addOrder&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;[
+    {
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;product_id&quot;: &quot;34&quot;,
+        &quot;product_name&quot;: &quot;Canon Camera CX12&quot;,
+        &quot;product_amount&quot;: 14500,
+        &quot;qty&quot;: 1,
+        &quot;tax_amt&quot;: 915,
+        &quot;total_amt&quot;: 15415
+    }
+]&#39;
+    </div>
+
